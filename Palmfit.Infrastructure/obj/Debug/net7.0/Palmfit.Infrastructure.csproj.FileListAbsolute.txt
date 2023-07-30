@@ -1,0 +1,12 @@
+C:\Users\Decagon Laptop\OneDrive\Desktop\live-project-sq015-net-palmfit\Palmfit\Palmfit.Infrastructure\bin\Debug\net7.0\Palmfit.Infrastructure.deps.json
+C:\Users\Decagon Laptop\OneDrive\Desktop\live-project-sq015-net-palmfit\Palmfit\Palmfit.Infrastructure\bin\Debug\net7.0\Palmfit.Infrastructure.dll
+C:\Users\Decagon Laptop\OneDrive\Desktop\live-project-sq015-net-palmfit\Palmfit\Palmfit.Infrastructure\bin\Debug\net7.0\Palmfit.Infrastructure.pdb
+C:\Users\Decagon Laptop\OneDrive\Desktop\live-project-sq015-net-palmfit\Palmfit\Palmfit.Infrastructure\obj\Debug\net7.0\Palmfit.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Decagon Laptop\OneDrive\Desktop\live-project-sq015-net-palmfit\Palmfit\Palmfit.Infrastructure\obj\Debug\net7.0\Palmfit.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Decagon Laptop\OneDrive\Desktop\live-project-sq015-net-palmfit\Palmfit\Palmfit.Infrastructure\obj\Debug\net7.0\Palmfit.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Decagon Laptop\OneDrive\Desktop\live-project-sq015-net-palmfit\Palmfit\Palmfit.Infrastructure\obj\Debug\net7.0\Palmfit.Infrastructure.AssemblyInfo.cs
+C:\Users\Decagon Laptop\OneDrive\Desktop\live-project-sq015-net-palmfit\Palmfit\Palmfit.Infrastructure\obj\Debug\net7.0\Palmfit.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Decagon Laptop\OneDrive\Desktop\live-project-sq015-net-palmfit\Palmfit\Palmfit.Infrastructure\obj\Debug\net7.0\Palmfit.Infrastructure.dll
+C:\Users\Decagon Laptop\OneDrive\Desktop\live-project-sq015-net-palmfit\Palmfit\Palmfit.Infrastructure\obj\Debug\net7.0\refint\Palmfit.Infrastructure.dll
+C:\Users\Decagon Laptop\OneDrive\Desktop\live-project-sq015-net-palmfit\Palmfit\Palmfit.Infrastructure\obj\Debug\net7.0\Palmfit.Infrastructure.pdb
+C:\Users\Decagon Laptop\OneDrive\Desktop\live-project-sq015-net-palmfit\Palmfit\Palmfit.Infrastructure\obj\Debug\net7.0\ref\Palmfit.Infrastructure.dll
