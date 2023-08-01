@@ -6,7 +6,9 @@ using Palmfit.Data.AppDbContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System.Text;
-using Core.Repositories.AuthRepository;
+using API.Extensions;
+using Palmfit.Core.Services;
+using Palmfit.Core.Implementations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,7 +29,8 @@ if (maxUserWatches > 0)
 }
 
 //Repo registration
-builder.Services.AddScoped<IAuthRepo, AuthRepo>();
+builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+builder.Services.AddScoped<IFoodInterfaceRepository, FoodInterfaceRepository>();
 
 
 // Configure JWT authentication options-----------------------
@@ -55,19 +58,19 @@ builder.Services.AddAuthentication(options =>
 
 
 // Add services to the container.
-builder.Services.AddControllers(); 
+builder.Services.AddControllers();
 
+//Calling the extention method
+builder.Services.AddDbContextAndConfiguration(builder.Configuration);
 
 // Database connection and Identity configuration
-builder.Services.AddDbContext<PalmfitDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+//builder.Services.AddDbContext<PalmfitDbContext>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 //Identity role registration with Stores and default token provider
 builder.Services.AddIdentity<AppUser, IdentityRole>()
     .AddEntityFrameworkStores<PalmfitDbContext>()
     .AddDefaultTokenProviders();
-
-
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

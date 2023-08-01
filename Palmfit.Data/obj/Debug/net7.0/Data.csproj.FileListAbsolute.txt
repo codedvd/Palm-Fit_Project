@@ -12,3 +12,17 @@ C:\Users\Decagon Laptop\OneDrive\Desktop\Live\TheoPalmFit\Palmfit.Data\obj\Debug
 C:\Users\Decagon Laptop\OneDrive\Desktop\Live\TheoPalmFit\Palmfit.Data\obj\Debug\net7.0\Data.pdb
 C:\Users\Decagon Laptop\OneDrive\Desktop\Live\TheoPalmFit\Palmfit.Data\obj\Debug\net7.0\Data.genruntimeconfig.cache
 C:\Users\Decagon Laptop\OneDrive\Desktop\Live\TheoPalmFit\Palmfit.Data\obj\Debug\net7.0\ref\Data.dll
+C:\Users\ogwuc\Desktop\Decagon Task\Personal\Palm-Fit_Project\Palmfit.Data\bin\Debug\net7.0\Data.deps.json
+C:\Users\ogwuc\Desktop\Decagon Task\Personal\Palm-Fit_Project\Palmfit.Data\bin\Debug\net7.0\Data.runtimeconfig.json
+C:\Users\ogwuc\Desktop\Decagon Task\Personal\Palm-Fit_Project\Palmfit.Data\bin\Debug\net7.0\Data.dll
+C:\Users\ogwuc\Desktop\Decagon Task\Personal\Palm-Fit_Project\Palmfit.Data\bin\Debug\net7.0\Data.pdb
+C:\Users\ogwuc\Desktop\Decagon Task\Personal\Palm-Fit_Project\Palmfit.Data\obj\Debug\net7.0\Data.csproj.AssemblyReference.cache
+C:\Users\ogwuc\Desktop\Decagon Task\Personal\Palm-Fit_Project\Palmfit.Data\obj\Debug\net7.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ogwuc\Desktop\Decagon Task\Personal\Palm-Fit_Project\Palmfit.Data\obj\Debug\net7.0\Data.AssemblyInfoInputs.cache
+C:\Users\ogwuc\Desktop\Decagon Task\Personal\Palm-Fit_Project\Palmfit.Data\obj\Debug\net7.0\Data.AssemblyInfo.cs
+C:\Users\ogwuc\Desktop\Decagon Task\Personal\Palm-Fit_Project\Palmfit.Data\obj\Debug\net7.0\Data.csproj.CoreCompileInputs.cache
+C:\Users\ogwuc\Desktop\Decagon Task\Personal\Palm-Fit_Project\Palmfit.Data\obj\Debug\net7.0\Data.dll
+C:\Users\ogwuc\Desktop\Decagon Task\Personal\Palm-Fit_Project\Palmfit.Data\obj\Debug\net7.0\refint\Data.dll
+C:\Users\ogwuc\Desktop\Decagon Task\Personal\Palm-Fit_Project\Palmfit.Data\obj\Debug\net7.0\Data.pdb
+C:\Users\ogwuc\Desktop\Decagon Task\Personal\Palm-Fit_Project\Palmfit.Data\obj\Debug\net7.0\Data.genruntimeconfig.cache
+C:\Users\ogwuc\Desktop\Decagon Task\Personal\Palm-Fit_Project\Palmfit.Data\obj\Debug\net7.0\ref\Data.dll

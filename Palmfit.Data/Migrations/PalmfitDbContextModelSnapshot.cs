@@ -24,8 +24,9 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.UserOTP", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -317,8 +318,9 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Palmfit.Data.Entities.Food", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Calorie")
                         .HasColumnType("decimal(18,2)");
@@ -336,7 +338,10 @@ namespace Data.Migrations
 
                     b.Property<string>("FoodClassId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("FoodClassId1")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Image")
                         .IsRequired()
@@ -362,15 +367,16 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FoodClassId");
+                    b.HasIndex("FoodClassId1");
 
                     b.ToTable("Foods");
                 });
 
             modelBuilder.Entity("Palmfit.Data.Entities.FoodClass", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -400,8 +406,9 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Palmfit.Data.Entities.Health", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AppUserId")
                         .IsRequired()
@@ -452,8 +459,9 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Palmfit.Data.Entities.Invite", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AppUserId")
                         .IsRequired()
@@ -492,8 +500,9 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Palmfit.Data.Entities.Notification", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AppUserId")
                         .IsRequired()
@@ -531,8 +540,9 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Palmfit.Data.Entities.Review", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AppUserId")
                         .IsRequired()
@@ -570,8 +580,9 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Palmfit.Data.Entities.Setting", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AppUserId")
                         .IsRequired()
@@ -596,8 +607,9 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Palmfit.Data.Entities.Subscription", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AppUserId")
                         .IsRequired()
@@ -633,8 +645,9 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Palmfit.Data.Entities.Transaction", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
@@ -693,8 +706,9 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Palmfit.Data.Entities.Wallet", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AppUserId")
                         .IsRequired()
@@ -719,8 +733,9 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Palmfit.Data.Entities.WalletHistory", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
@@ -735,8 +750,8 @@ namespace Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HealthId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid?>("HealthId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -755,8 +770,8 @@ namespace Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("WalletId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("WalletId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -822,7 +837,7 @@ namespace Data.Migrations
                 {
                     b.HasOne("Palmfit.Data.Entities.FoodClass", "FoodClass")
                         .WithMany("Foods")
-                        .HasForeignKey("FoodClassId")
+                        .HasForeignKey("FoodClassId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -925,7 +940,9 @@ namespace Data.Migrations
 
                     b.HasOne("Palmfit.Data.Entities.Wallet", "Wallet")
                         .WithMany()
-                        .HasForeignKey("WalletId");
+                        .HasForeignKey("WalletId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Wallet");
                 });
