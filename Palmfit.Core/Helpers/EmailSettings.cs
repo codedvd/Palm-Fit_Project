@@ -12,6 +12,5 @@ namespace Core.Helpers
         public static int SmtpPort = 587;
         public static string SmtpUsername = "info@enema.ng";
         public static string SmtpPassword = "-8qijjUd";
-
     }
 }

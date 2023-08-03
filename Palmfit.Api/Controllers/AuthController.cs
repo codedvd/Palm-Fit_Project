@@ -73,7 +73,10 @@ namespace Palmfit.Api.Controllers
             {
                 return BadRequest(new ApiResponse<string>("Invalid OTP, check and try again"));
             }
-            return Ok(new ApiResponse<string>("Otp Successfully validated."));
+
+            await _authRepo.UpdateVerifiedStatus(otpFromUser.Email);
+
+            return Ok(new ApiResponse<string>("Validation Successfully."));
         }
 
         [HttpPost("signUp")]

@@ -13,6 +13,4 @@ namespace Data.Entities
         public string OTP { get; set; }
         public DateTime Expiration { get; set; }
     }
-    
-
 }
