@@ -50,13 +50,52 @@ namespace Palmfit.Data.EntityEnums
 
     public enum TransactionType
     {
+        Deposit,
+        Withdrawal,
+        Transfer,
+        Purchase,
+        Payment,
+        Refund,
+        Fee,
+        Expense,
+        Donation,
+        Reward,
+        Subscription,
+        Bonus
     }
 
     public enum TransactionChannel
     {
+        OnlineOnlineBanking,
+        ATM,
+        MobileApp,
+        POS,
+        BankBranch,
+        WireTransfer,
+        Cryptocurrency,
+        Cash,
+        Check,
+        BillPayment,
+        DirectDebit,
+        GiftCard,
+        Venmo,
+        PayPal,
+        ApplePay,
+        GooglePay,
+        SamsungPay
     }
 
     public enum WalletType
     {
+        Personal,
+        Business,
+        Savings,
+        Travel,
+        Crypto,
+        GiftCard,
+        Online,
+        Joint,
+        Child,
+        Charity
     }
 }
