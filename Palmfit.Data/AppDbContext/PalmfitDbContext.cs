@@ -28,10 +28,18 @@ namespace Palmfit.Data.AppDbContext
         public DbSet<Food> Foods { get; set; }
         public DbSet<UserOTP> UserOTPs { get; set; }
 
-        public PalmfitDbContext(DbContextOptions<PalmfitDbContext> options) : base(options)
-        {
-        }
+        public PalmfitDbContext(DbContextOptions<PalmfitDbContext> options) : base(options) { }
 
-            
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+
+        //    modelBuilder.Entity<WalletHistory>()
+        //        .Property(w => w.Type)
+        //        .HasConversion<string>();
+
+        //    modelBuilder.Entity<WalletHistory>()
+        //        .Property(t => t.TransactionType)
+        //        .HasConversion<string>();
+        //}
     }
 }

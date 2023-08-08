@@ -1,31 +1,28 @@
-﻿using Core.Services;
-using Microsoft.AspNetCore.Authorization;
+﻿using Core.Helpers;
+using Core.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Palmfit.Data.AppDbContext;
+using Palmfit.Core.Dtos;
 using Palmfit.Data.Entities;
-using Palmfit.Data.EntityEnums;
-using System.Data;
 
 namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class WalletTransactionsController : ControllerBase
+    public class WalletController : ControllerBase
     {
-        private readonly IWalletRepository _transaction;
-        public WalletTransactionsController(IWalletRepository transaction)
+        private readonly IWalletRepository _wallet;
+        public WalletController(IWalletRepository wallet)
         {
-            _transaction = transaction;
+            _wallet = wallet;
         }
 
-        [HttpGet("retrieve-wallet-histories")]
-        //[Authorize(Roles = "Admin")]
-        public async Task<ActionResult<IEnumerable<Transaction>>> GetAllWalletTransactionHistory(int page, int pageSize)
+        [HttpGet("wallet-histories")]
+        public async Task<IActionResult> GetAllWalletHistories(int page, int pageSize)
         {
-            var transactions = await _transaction.GetPagedTransactionsAsync(page, pageSize);
-            return Ok(transactions);
+            var paginatedResponse = await _wallet.WalletHistories(page, pageSize);
+
+            return Ok(ApiResponse.Success(paginatedResponse));
         }
     }
 }

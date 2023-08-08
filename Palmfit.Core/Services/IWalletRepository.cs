@@ -1,4 +1,4 @@
-﻿using Core.Implementations;
+﻿using Core.Helpers;
 using Palmfit.Data.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,6 +10,6 @@ namespace Core.Services
 {
     public interface IWalletRepository
     {
-        Task<PaginParameter<WalletHistory>> GetPagedTransactionsAsync(int page, int pageSize);
+        Task<PaginParameter<WalletHistory>> WalletHistories(int page, int pageSize);
     }
 }

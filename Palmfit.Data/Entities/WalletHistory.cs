@@ -1,10 +1,12 @@
-﻿using Palmfit.Data.EntityEnums;
+﻿using Microsoft.EntityFrameworkCore.Infrastructure;
+using Palmfit.Data.EntityEnums;
 
 namespace Palmfit.Data.Entities
 {
     public class WalletHistory : BaseEntity
     {
         public decimal Amount { get; set; }
+        public TransactionType TransactionType { get; set; }
         public WalletType Type { get; set; } // Is this a subscription Type
         public DateTime Date { get; set; }
         public string Reference { get; set; }

@@ -33,7 +33,9 @@ if (maxUserWatches > 0)
 //Repo registration
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IFoodInterfaceRepository, FoodInterfaceRepository>();
+builder.Services.AddScoped<ITransactionsRepository, TransactionsRepository>();
 builder.Services.AddScoped<IWalletRepository, WalletRepository>();
+builder.Services.AddScoped<IUserInviteRepository, UserInviteRepository>();
 
 
 // Configure JWT authentication options-----------------------

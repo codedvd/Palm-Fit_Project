@@ -1,4 +1,5 @@
-﻿using Core.Services;
+﻿using Core.Helpers;
+using Core.Services;
 using Microsoft.EntityFrameworkCore;
 using Palmfit.Data.AppDbContext;
 using Palmfit.Data.Entities;
@@ -19,88 +20,82 @@ namespace Core.Implementations
             _palmfitDb = palmfitDb;
         }
 
-        public async Task<PaginParameter<WalletHistory>> GetPagedTransactionsAsync(int page, int pageSize)
+        public async Task<PaginParameter<WalletHistory>> WalletHistories(int page, int pageSize)
         {
             //Seeding Data
             await SeedSampleTransactionsAsync(_palmfitDb);
 
-            var totalCount = await _palmfitDb.WalletHistories.CountAsync();
+            int totalCount = await _palmfitDb.WalletHistories.CountAsync();
+            int skip = (page - 1) * pageSize;
 
-            var transactions = await _palmfitDb.WalletHistories
-                .Skip((page - 1) * pageSize)
-                .Take(pageSize)
+            var histories = await _palmfitDb.WalletHistories
+                .Include(i => i.Wallet)
+                .OrderByDescending(t => t.Date)
+                .Skip(skip)
                 .ToListAsync();
 
-            return new PaginParameter<WalletHistory>
+            var paginatedResponse = new PaginParameter<WalletHistory>
             {
                 TotalCount = totalCount,
                 Page = page,
                 PageSize = pageSize,
-                Data = transactions
+                Data = histories
             };
+
+            return paginatedResponse;
         }
 
 
         public static async Task SeedSampleTransactionsAsync(PalmfitDbContext dbContext)
         {
-            if (!dbContext.Transactions.Any())
+            if (!dbContext.WalletHistories.Any())
             {
-                var sampleTransactions = new List<Transaction>
+                var sampleTransactions = new List<WalletHistory>
                 {
-                    new Transaction
+                    new WalletHistory
                     {
                         Date = DateTime.UtcNow,
-                        Description = "Sold His Meal plan to another user with Id 123",
-                        Type = TransactionType.Sale,
-                        Channel = TransactionChannel.Online,
+                        TransactionType = TransactionType.Deposit,
+                        Type = WalletType.Crypto,
                         Amount = 100.00M,
-                        IsSuccessful = true,
                         Reference = "REF123",
-                        IpAddress = "192.168.1.1",
-                        Currency = "USD",
-                        Vendor = "Checkers Community",
-                        AppUserId = "6ddf78bb-f0f9-4d9a-a30b-c2ebf39e243c",
+                        Details = "Meal plan transfer",
+                        WalletAppUserId = "b16e5043-df2b-4724-87b7-975975da399f",
                         CreatedAt = DateTime.UtcNow,
                         UpdatedAt = DateTime.UtcNow,
                     },
-                    new Transaction
+                    new WalletHistory
                     {
                         Date = DateTime.UtcNow,
-                        Description = "Subcribed a weekly plan for User with Id 234",
-                        Type = TransactionType.Buy,
-                        Channel = TransactionChannel.Online,
+                        TransactionType = TransactionType.Purchase,
+                        Type = WalletType.Personal,
                         Amount = 50.00M,
-                        IsSuccessful = true,
                         Reference = "REF234",
-                        IpAddress = "192.231.1.1",
-                        Currency = "NGN",
-                        Vendor = "Tesla",
-                        AppUserId = "b16e5043-df2b-4724-87b7-975975da399f",
+                        Details = "Weekly plan subscription",
+                        WalletAppUserId = "6ddf78bb-f0f9-4d9a-a30b-c2ebf39e243c",
                         CreatedAt = DateTime.UtcNow,
                         UpdatedAt = DateTime.UtcNow,
                     },
-                    new Transaction
+                    new WalletHistory
                     {
+                        
                         Date = DateTime.UtcNow,
-                        Description = "Subcribed for a Weekly Meal Plan",
-                        Type = TransactionType.Buy,
-                        Channel = TransactionChannel.Online,
+                        TransactionType = TransactionType.Donation,
+                        Type = WalletType.Online,
                         Amount = 150.00M,
-                        IsSuccessful = true,
                         Reference = "REF612",
-                        IpAddress = "211.231.1.1",
-                        Currency = "USD",
-                        Vendor = "Foodies Culture",
-                        AppUserId = "b7a8cf10-f394-4827-8204-5e72d50f07e8",
+                        Details = "Weekly meal plan subscription",
+                        WalletAppUserId = "b7a8cf10-f394-4827-8204-5e72d50f07e8",
                         CreatedAt = DateTime.UtcNow,
                         UpdatedAt = DateTime.UtcNow,
                     },
-                    // Add more sample transactions here
                 };
-                await dbContext.Transactions.AddRangeAsync(sampleTransactions);
-                await dbContext.SaveChangesAsync();
-            }
-        }
 
+                await dbContext.WalletHistories.AddRangeAsync(sampleTransactions);
+                await dbContext.SaveChangesAsync();
+
+            }
+
+        }
     }
 }
